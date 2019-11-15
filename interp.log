@@ -1,0 +1,95 @@
+=========
+pe 15.11.2019 13.27.06 +0000
+Starting interpolation processes for 201911151320 with 15 members
+
+Starting member-00
+[1] 29015
+Starting member-01
+[2] 29017
+Starting member-02
+[3] 29019
+Starting member-03
+[4] 29021
+Starting member-04
+[5] 29023
+Starting member-05
+[6] 29025
+Starting member-06
+[7] 29027
+Starting member-07
+[8] 29029
+Starting member-08
+[9] 29031
+Starting member-09
+[10] 29033
+Starting member-10
+[11] 29035
+Starting member-11
+[12] 29038
+Starting member-12
+[13] 29042
+Starting member-13
+[14] 29045
+Starting member-14
+2.762u 0.375s 0:03.13 100.0%	0+0k 0+24io 0pf+0w
+[13]   Done                          ./member_interp 201911151320 member-12 /dev/shm/ppn/nc_201911151320.h5 /mnt/meru/data/prod/radman/latest/fmi/radar/composite/lowest/201911151320_fmi.radar.composite.lowest_FIN_RAVAKE.pgm /dev/shm/ppn/acc 10 > "$MEMBERNAME".log
+2.677u 0.354s 0:03.03 99.6%	0+0k 0+24io 0pf+0w
+[12]   Done                          ./member_interp 201911151320 member-11 /dev/shm/ppn/nc_201911151320.h5 /mnt/meru/data/prod/radman/latest/fmi/radar/composite/lowest/201911151320_fmi.radar.composite.lowest_FIN_RAVAKE.pgm /dev/shm/ppn/acc 10 > "$MEMBERNAME".log
+2.612u 0.389s 0:03.00 99.6%	0+0k 0+24io 0pf+0w
+[10]   Done                          ./member_interp 201911151320 member-09 /dev/shm/ppn/nc_201911151320.h5 /mnt/meru/data/prod/radman/latest/fmi/radar/composite/lowest/201911151320_fmi.radar.composite.lowest_FIN_RAVAKE.pgm /dev/shm/ppn/acc 10 > "$MEMBERNAME".log
+2.750u 0.388s 0:03.13 100.0%	0+0k 0+24io 0pf+0w
+[8]    Done                          ./member_interp 201911151320 member-07 /dev/shm/ppn/nc_201911151320.h5 /mnt/meru/data/prod/radman/latest/fmi/radar/composite/lowest/201911151320_fmi.radar.composite.lowest_FIN_RAVAKE.pgm /dev/shm/ppn/acc 10 > "$MEMBERNAME".log
+2.699u 0.361s 0:03.06 99.6%	0+0k 0+24io 0pf+0w
+[5]    Done                          ./member_interp 201911151320 member-04 /dev/shm/ppn/nc_201911151320.h5 /mnt/meru/data/prod/radman/latest/fmi/radar/composite/lowest/201911151320_fmi.radar.composite.lowest_FIN_RAVAKE.pgm /dev/shm/ppn/acc 10 > "$MEMBERNAME".log
+2.697u 0.392s 0:03.10 99.3%	0+0k 0+32io 0pf+0w
+[4]    Done                          ./member_interp 201911151320 member-03 /dev/shm/ppn/nc_201911151320.h5 /mnt/meru/data/prod/radman/latest/fmi/radar/composite/lowest/201911151320_fmi.radar.composite.lowest_FIN_RAVAKE.pgm /dev/shm/ppn/acc 10 > "$MEMBERNAME".log
+2.681u 0.373s 0:03.05 100.0%	0+0k 0+24io 0pf+0w
+[3]    Done                          ./member_interp 201911151320 member-02 /dev/shm/ppn/nc_201911151320.h5 /mnt/meru/data/prod/radman/latest/fmi/radar/composite/lowest/201911151320_fmi.radar.composite.lowest_FIN_RAVAKE.pgm /dev/shm/ppn/acc 10 > "$MEMBERNAME".log
+2.758u 0.369s 0:03.12 99.6%	0+0k 0+24io 0pf+0w
+[1]    Done                          ./member_interp 201911151320 member-00 /dev/shm/ppn/nc_201911151320.h5 /mnt/meru/data/prod/radman/latest/fmi/radar/composite/lowest/201911151320_fmi.radar.composite.lowest_FIN_RAVAKE.pgm /dev/shm/ppn/acc 10 > "$MEMBERNAME".log
+2.692u 0.367s 0:03.06 99.6%	0+0k 0+24io 0pf+0w
+
+Last member finished, waiting others (if any) to finish:
+Still running:
+201911151320_member-05.pid
+201911151320_member-06.pid
+201911151320_member-10.pid
+201911151320_member-13.pid
+[14] + Done                          ./member_interp 201911151320 member-13 /dev/shm/ppn/nc_201911151320.h5 /mnt/meru/data/prod/radman/latest/fmi/radar/composite/lowest/201911151320_fmi.radar.composite.lowest_FIN_RAVAKE.pgm /dev/shm/ppn/acc 10 > "$MEMBERNAME".log
+2.770u 0.509s 0:03.27 100.0%	0+0k 0+32io 0pf+0w
+[11] + Done                          ./member_interp 201911151320 member-10 /dev/shm/ppn/nc_201911151320.h5 /mnt/meru/data/prod/radman/latest/fmi/radar/composite/lowest/201911151320_fmi.radar.composite.lowest_FIN_RAVAKE.pgm /dev/shm/ppn/acc 10 > "$MEMBERNAME".log
+2.778u 0.611s 0:03.38 100.0%	0+0k 0+24io 0pf+0w
+[9]  + Done                          ./member_interp 201911151320 member-08 /dev/shm/ppn/nc_201911151320.h5 /mnt/meru/data/prod/radman/latest/fmi/radar/composite/lowest/201911151320_fmi.radar.composite.lowest_FIN_RAVAKE.pgm /dev/shm/ppn/acc 10 > "$MEMBERNAME".log
+2.798u 0.357s 0:03.15 99.6%	0+0k 0+24io 0pf+0w
+[7]  + Done                          ./member_interp 201911151320 member-06 /dev/shm/ppn/nc_201911151320.h5 /mnt/meru/data/prod/radman/latest/fmi/radar/composite/lowest/201911151320_fmi.radar.composite.lowest_FIN_RAVAKE.pgm /dev/shm/ppn/acc 10 > "$MEMBERNAME".log
+2.842u 0.360s 0:03.20 100.0%	0+0k 0+32io 0pf+0w
+[6]  + Done                          ./member_interp 201911151320 member-05 /dev/shm/ppn/nc_201911151320.h5 /mnt/meru/data/prod/radman/latest/fmi/radar/composite/lowest/201911151320_fmi.radar.composite.lowest_FIN_RAVAKE.pgm /dev/shm/ppn/acc 10 > "$MEMBERNAME".log
+2.811u 0.391s 0:03.20 100.0%	0+0k 0+24io 0pf+0w
+[2]  + Done                          ./member_interp 201911151320 member-01 /dev/shm/ppn/nc_201911151320.h5 /mnt/meru/data/prod/radman/latest/fmi/radar/composite/lowest/201911151320_fmi.radar.composite.lowest_FIN_RAVAKE.pgm /dev/shm/ppn/acc 10 > "$MEMBERNAME".log
+2.781u 0.387s 0:03.17 99.6%	0+0k 0+24io 0pf+0w
+ls: No match.
+
+Interpolations finished.
+
+Concatenation of member accumulation files:
+RAVACC_201911151320-201911151325+005.dat ready
+RAVACC_201911151320-201911151330+010.dat ready
+RAVACC_201911151320-201911151335+015.dat ready
+RAVACC_201911151320-201911151340+020.dat ready
+RAVACC_201911151320-201911151345+025.dat ready
+RAVACC_201911151320-201911151350+030.dat ready
+RAVACC_201911151320-201911151355+035.dat ready
+RAVACC_201911151320-201911151400+040.dat ready
+RAVACC_201911151320-201911151405+045.dat ready
+RAVACC_201911151320-201911151410+050.dat ready
+RAVACC_201911151320-201911151415+055.dat ready
+RAVACC_201911151320-201911151420+060.dat ready
+RAVACC_201911151320-201911151425+065.dat ready
+RAVACC_201911151320-201911151430+070.dat ready
+RAVACC_201911151320-201911151435+075.dat ready
+RAVACC_201911151320-201911151440+080.dat ready
+RAVACC_201911151320-201911151445+085.dat ready
+RAVACC_201911151320-201911151450+090.dat ready
+
+Interpolation procedure of 201911151320 done
+pe 15.11.2019 13.27.12 +0000

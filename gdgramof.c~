@@ -1,0 +1,484 @@
+#include <stdio.h>
+#include <ctype.h>
+#include <stdlib.h>
+#include <string.h>
+#include <unistd.h>
+#include <time.h>
+#include "gd.h"
+#include "gdfontl.h"
+#include "gdfontmb.h"
+#include "gdfonts.h"
+#include "gdfontt.h"
+ 
+typedef unsigned long int ulong;
+typedef unsigned char uchar;
+
+struct Colors {
+                 uchar N;
+                 uchar R;
+                 uchar G;
+                 uchar B;
+              };
+         
+
+static long int Xdim,Ydim,arrsize;
+
+void insert_legend
+    (uchar *maparr, gdImagePtr legend, long int xpos, long int ypos);
+
+void GD_to_ppm(unsigned char *ppmarr, gdImagePtr im);
+
+struct tm utc_to_local(char *utc, long int timediff);
+
+int main(int argc, char *argv[])
+{
+
+  gdImagePtr legend;  
+  
+  static struct Colors col[10];
+  struct tm LT;
+ 
+  uchar *inarr,
+        *maparr,
+	*outarr,
+        c,
+	r,mr,
+	g,mg,
+	b,mb; 
+
+
+  char *argpath,
+       *picpath,
+       *utc,
+       infile[200]={0},
+       filename[200]={0},
+       mapfile[200]={0},
+       outfile[200]={0},
+       classfile[200]={0},
+       legtext[200]={0},
+       sline[200]={0},
+       legtime[200]={0},
+       *classname,
+       intype,maptype,*par;
+
+  long int n,N;
+
+  int i,
+      fontcolor,
+      bgcolor,
+      colind;
+
+  float dBZ;     
+
+  FILE *INFILE,
+       *MAPFILE,
+       *OUTFILE,
+       *CLASSFILE;
+
+
+   argpath=getenv("SUOMI_ARGPATH");
+   picpath=getenv("SUOMI_PIC_PATH");
+   classname=getenv("SUOMI_RAINCLASSES");
+   Xdim=atol(getenv("SUOMI_XDIM"));
+   Ydim=atol(getenv("SUOMI_YDIM"));
+   
+   arrsize=Xdim*Ydim;
+
+   par=strrchr(argv[1],'/');
+   if(par!=NULL) par++; else par=argv[1];
+   strcpy(filename,par);
+   if(filename[1]!='_')
+   {
+      sprintf(infile,"R_%.12s",filename);
+   }
+   else sprintf(infile,"%.27s",filename);
+   printf("%s\n",infile);
+   intype=infile[0];
+   maptype=intype;
+   if(argv[2][0]=='B') maptype=tolower(intype);
+  
+   sprintf(classfile,"%s",classname);
+   CLASSFILE=fopen(classfile,"r");
+   fgets(sline,199,CLASSFILE);
+   fgets(sline,199,CLASSFILE);
+   c=0;
+   while(1==1)
+   {
+      fgets(sline,199,CLASSFILE);
+      if(sline[0]=='\n') break;
+      sscanf(sline,"%*d %*d %*d %f %u %u %u",
+             &dBZ,&col[c].R,&col[c].G,&col[c].B);
+      col[c].N=(uchar)(2.0*dBZ+64.0);    
+      printf("VÄRIT %d %d %d %d\n",col[c].N,col[c].R,col[c].G,col[c].B);
+      c++;
+   }
+   fclose(CLASSFILE);
+   printf("VÄRIT %d LUETTU\n",c);
+   col[c].N=254;
+   col[c].R=col[c-1].R;
+   col[c].G=col[c-1].G;
+   col[c].B=col[c-1].B;
+   colind=c;
+
+   legend=gdImageCreate(300,40);
+   if(isupper(maptype))
+   {
+      sprintf(mapfile,"%s/Suomi.ppm",argpath);
+      maparr=malloc(arrsize*3);
+      MAPFILE=fopen(mapfile,"r");
+      fgets(sline,199,MAPFILE);
+      fgets(sline,199,MAPFILE);
+      fgets(sline,199,MAPFILE);
+      fread(maparr,arrsize*3,1,MAPFILE);
+      fontcolor=gdImageColorAllocate(legend,255,255,255);
+   }
+   else 
+   {
+      sprintf(mapfile,"%s/rantaraja.pgm",argpath);
+      inarr=malloc(arrsize);
+      maparr=malloc(3*arrsize);
+      MAPFILE=fopen(mapfile,"r");
+      fgets(sline,199,MAPFILE);
+      fread(inarr,arrsize,1,MAPFILE);
+      for(N=0;N<arrsize;N++) for(i=0;i<3;i++) maparr[N*3+i]=inarr[N];
+      free(inarr);
+      fontcolor=gdImageColorAllocate(legend,0,0,0);
+
+   }
+   fclose(MAPFILE);
+   printf("KARTTA %s LUETTU\n",mapfile);
+
+   outarr=calloc(arrsize*3,1);
+   sprintf(outfile,"%s/%c_%s.ppm",picpath,maptype,infile+2);
+   OUTFILE=fopen(outfile,"w");
+   fprintf(OUTFILE,"P6 %ld %ld 255\n",Xdim,Ydim);
+
+   N=3*750;
+   bgcolor=gdImageColorAllocate(legend,maparr[N],maparr[N+1],maparr[N+2]); 
+
+   switch(intype)
+   {
+      case 'G':
+        sprintf(legtext,"Todennäköisin dBZ ");
+        if(argc>=4) 
+        {
+          sprintf(legtext,"Sateen voimakkuusennuste ");
+          sprintf(legtime,"%d.%d.%d  klo %d:%02d ",
+                atoi(argv[5]),atoi(argv[4]),atoi(argv[3]),
+                atoi(argv[6]),atoi(argv[7]));
+        }
+        else    
+        sprintf(legtime,"%.2s.%.2s.%.4s %.2s:%.2s -> %.2s:%.2s UTC",
+                infile+8,infile+6,infile+2,infile+10,infile+12,
+                infile+23,infile+25);
+        inarr=malloc(arrsize);
+        INFILE=fopen(argv[1],"r");
+        fgets(sline,199,INFILE);
+        if(sline[0]!='P') rewind(INFILE);
+        fread(inarr,arrsize,1,INFILE);
+        fclose(INFILE); 
+        break;
+      case 'P':
+        sprintf(legtext,"Todennäköisyysennuste ");
+        sprintf(legtime,"%.2s.%.2s.%.4s %.2s:%.2s -> %.2s:%.2s UTC",
+                infile+8,infile+6,infile+2,infile+10,infile+12,
+                infile+23,infile+25);
+        inarr=malloc(3*arrsize);
+        INFILE=fopen(argv[1],"r");
+        fread(inarr,3*arrsize,1,INFILE);
+        fclose(INFILE); 
+        break;
+      case 'D':
+        sprintf(legtext,"Ennustekentän ja havainnon ero ");
+        sprintf(legtime,"%.2s.%.2s.%.4s %.2s:%.2s - %.2s:%.2s UTC",
+                infile+8,infile+6,infile+2,infile+10,infile+12,
+                infile+23,infile+25);
+        inarr=malloc(3*arrsize);
+        INFILE=fopen(argv[1],"r");
+        fgets(sline,199,INFILE);
+        fread(inarr,3*arrsize,1,INFILE);
+        fclose(INFILE); 
+        break;
+      case 'R':
+        sprintf(legtext,"Havaittu dBZ");
+        sprintf(legtime,"%.2s.%.2s.%.4s %.2s:%.2s UTC",
+                infile+8,infile+6,infile+2,infile+10,infile+12);
+        inarr=malloc(arrsize);
+        INFILE=fopen(argv[1],"r");
+        fread(inarr,arrsize,1,INFILE);
+        fclose(INFILE); 
+        break;
+   }
+  
+   printf("%s\n%s\n",legtext,legtime);
+
+   switch(maptype)
+   {
+     case 'P': 
+       for(n=0;n<arrsize;n++)
+       {
+          N=3*n;
+          mr=maparr[N];
+          mg=maparr[N+1];
+	  mb=maparr[N+2]; 
+          r=inarr[N];
+          g=inarr[N+1];
+	  b=inarr[N+2]; 
+          outarr[N]=mr;
+          outarr[N+1]=mg;
+          outarr[N+2]=mb;
+          if(!(mr==4  && mg==2  && mb==4 ) &&
+             !(mr==164 && mg==66 && mb==68) && (r+g+b))
+          {
+             outarr[N]=55+inarr[N+2]*2;
+             outarr[N+1]=55+inarr[N+1]*2;
+             outarr[N+2]=55+inarr[N]*2;
+          }
+       }   
+       break;
+
+     case 'p':
+       for(n=0;n<arrsize;n++)
+       {
+          N=3*n;
+          r=inarr[N];
+          g=inarr[N+1];
+	  b=inarr[N+2]; 
+          c=maparr[N];
+          outarr[N]=c;
+          outarr[N+1]=c;
+          outarr[N+2]=c;
+          if(r+g+b)
+          {
+            if(!c)
+            {
+              outarr[N]=255;
+              outarr[N+1]=255;
+              outarr[N+2]=255;
+            }
+            else
+            {
+              outarr[N]=55+inarr[N+2]*2;
+              outarr[N+1]=55+inarr[N+1]*2;
+              outarr[N+2]=55+inarr[N]*2;
+            }
+          }
+       }   
+       break;
+     case 'D':
+       for(n=0;n<arrsize;n++)
+       {
+          N=3*n;
+          mr=maparr[N];
+          mg=maparr[N+1];
+	  mb=maparr[N+2]; 
+          r=inarr[N];
+          g=inarr[N+1];
+	  b=inarr[N+2]; 
+          outarr[N]=mr;
+          outarr[N+1]=mg;
+          outarr[N+2]=mb;
+          if(!(mr==4  && mg==2  && mb==4 ) &&
+             !(mr==164 && mg==66 && mb==68) && ((r+g+b)!=765))
+          {
+             outarr[N]=inarr[N];
+             outarr[N+1]=inarr[N+1];
+             outarr[N+2]=inarr[N+2];
+          }
+       }   
+       break;
+
+     case 'd':
+       for(n=0;n<arrsize;n++)
+       {
+          N=3*n;
+          r=inarr[N];
+          g=inarr[N+1];
+	  b=inarr[N+2]; 
+          c=maparr[N];
+          outarr[N]=c;
+          outarr[N+1]=c;
+          outarr[N+2]=c;
+          if((r+g+b)!=765)
+          {
+            if(!c)
+            {
+              outarr[N]=255;
+              outarr[N+1]=255;
+              outarr[N+2]=255;
+            }
+            else
+            {
+              outarr[N]=inarr[N];
+              outarr[N+1]=inarr[N+1];
+              outarr[N+2]=inarr[N+2];
+            }
+          }
+       }   
+       break;
+     case 'G': case 'R':
+       for(n=0;n<arrsize;n++)
+       {
+          N=3*n;
+          mr=maparr[N];
+          mg=maparr[N+1];
+	  mb=maparr[N+2]; 
+          c=inarr[n];
+          if((c<col[0].N) || (c==255) || (mr==4  && mg==2  && mb==4 ) ||
+              (mr==164 && mg==66 && mb==68))
+          {
+            outarr[N]=mr;
+            outarr[N+1]=mg;
+            outarr[N+2]=mb;
+          }        
+          else
+          {
+            for(i=0;i<colind;i++)
+            if((c>=col[i].N) && (c<col[i+1].N)) 
+            {
+              r=col[i].R;
+              g=col[i].G;
+	      b=col[i].B;
+            }
+            outarr[N]=r;
+            outarr[N+1]=g;
+            outarr[N+2]=b;
+          } 
+       }   
+       break;
+
+     case 'g': case 'r':
+       for(n=0;n<arrsize;n++)
+       {
+          N=3*n;
+          mr=maparr[N];
+          c=inarr[n];
+          if((c<col[0].N) || (c==255))
+          {
+            outarr[N]=mr;
+            outarr[N+1]=mr;
+            outarr[N+2]=mr;
+          }        
+          else
+          {
+            if(!mr)
+            {
+              r=255;
+              g=255;
+	      b=255;
+            }
+            else
+	    {
+              for(i=0;i<colind;i++)
+              if((c>=col[i].N) && (c<col[i+1].N)) 
+              {
+                r=col[i].R;
+                g=col[i].G;
+	        b=col[i].B;
+              }
+            }
+            outarr[N]=r;
+            outarr[N+1]=g;
+            outarr[N+2]=b;
+          } 
+       }   
+       break;
+   } 
+   printf("DATA %c LUETTU\n",maptype);
+
+   gdImageFilledRectangle(legend,0,0,299,39,bgcolor);
+   gdImageString(legend, gdFontLarge,1,3,legtext,fontcolor);
+   gdImageString(legend, gdFontLarge,1,20,legtime,fontcolor);
+   insert_legend(outarr,legend,-1,-1);
+   gdImageDestroy(legend);
+
+   fwrite(outarr,arrsize*3,1,OUTFILE);
+   fclose(OUTFILE);
+
+   free(maparr);
+   free(inarr);
+   free(outarr);
+
+   return(0);
+}
+
+
+void insert_legend
+    (uchar *maparr, gdImagePtr legend, long int xpos, long int ypos)
+{
+   ulong i,lsize,lx,ly,x,y,lN,pN;
+   uchar *legarr;
+
+
+   lx=legend->sx;
+   ly=legend->sy;
+
+   if(xpos<0) xpos=Xdim+xpos-lx-1;
+   if(ypos<0) ypos=Ydim+ypos-ly-1;
+
+   lsize=3*lx*ly;
+   legarr=malloc(lsize);
+
+   GD_to_ppm(legarr,legend);
+   lN=0;
+   for(y=ypos;y<(ypos+ly);y++)
+   {
+     for(x=xpos;x<(xpos+lx);x++)
+     {
+        pN=3*(y*Xdim+x);
+        for(i=0;i<3;i++) maparr[pN+i]=legarr[lN+i];
+        lN+=3;
+     }
+   }
+   free(legarr);
+   return;
+}        
+
+void GD_to_ppm(unsigned char *ppmarr, gdImagePtr im)
+{
+
+   long int N;
+   int x,y,c;
+
+   N=0;
+   for(y=0;y<im->sy;y++) for(x=0;x<im->sx;x++)
+   {
+        c=gdImageGetPixel(im,x,y);
+        ppmarr[N]=im->red[c];
+        ppmarr[N+1]=im->green[c];
+        ppmarr[N+2]=im->blue[c];
+        N+=3;
+   }
+
+   return;
+}
+
+
+struct tm utc_to_local(char *utc, long int timediff)
+{
+   struct tm Sdd,Ldd;
+   time_t secs,l_time,tdiff;
+
+   l_time=time(&l_time);
+   Ldd=*localtime(&l_time);
+   if(Ldd.tm_isdst==1) tdiff=10800; else tdiff=7200;
+
+   sscanf(utc,"%4d%2d%2d%2d%2d",&Sdd.tm_year,&Sdd.tm_mon,
+                                 &Sdd.tm_mday,&Sdd.tm_hour,
+                                 &Sdd.tm_min);
+   Sdd.tm_year-=1900;
+   Sdd.tm_mon--;
+   Sdd.tm_sec=0;
+   Sdd.tm_isdst=-1;
+   secs=mktime(&Sdd);
+   secs=secs+tdiff+timediff;
+   Ldd=*localtime(&secs);     
+   return(Ldd);
+}
+
+
+
+
+
+
+

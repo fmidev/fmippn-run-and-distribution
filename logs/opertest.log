@@ -1,0 +1,1165 @@
+PPN process for 201911151315 started at
+pe 15.11.2019 15.16.16 +0200
+~/devel/fmippn/src ~/src
+Pysteps configuration file found at: /home/users/ppn/devel/fmippn/src/pystepsrc
+
+Computing the motion field with the Lucas-Kanade method.
+--- LK found 268 sparse vectors ---
+--- 87 sparse vectors left for interpolation ---
+--- 6.92 seconds ---
+Computing STEPS nowcast:
+------------------------
+
+Inputs:
+-------
+input dimensions: 1826x1160
+km/pixel:         1
+time step:        5 minutes
+
+Methods:
+--------
+extrapolation:          semilagrangian
+bandpass filter:        gaussian
+decomposition:          fft
+noise generator:        nonparametric
+noise adjustment:       no
+velocity perturbator:   bps
+conditional statistics: no
+precip. mask method:    incremental
+probability matching:   cdf
+FFT method:             pyfftw
+
+Parameters:
+-----------
+number of time steps:     18
+ensemble size:            15
+parallel threads:         30
+number of cascade levels: 6
+order of the AR(p) model: 2
+velocity perturbations, parallel:      0,0,0
+velocity perturbations, perpendicular: 0,0,0
+precip. intensity threshold: -10
+************************************************
+* Correlation coefficients for cascade levels: *
+************************************************
+-----------------------------------------
+| Level |     Lag-1     |     Lag-2     |
+-----------------------------------------
+| 1     | 0.999101      | 0.998220      |
+-----------------------------------------
+| 2     | 0.995844      | 0.989663      |
+-----------------------------------------
+| 3     | 0.984959      | 0.957557      |
+-----------------------------------------
+| 4     | 0.933690      | 0.858640      |
+-----------------------------------------
+| 5     | 0.505644      | 0.371167      |
+-----------------------------------------
+| 6     | 0.047764      | 0.017517      |
+-----------------------------------------
+****************************************
+* AR(p) parameters for cascade levels: *
+****************************************
+------------------------------------------------------
+| Level |    Phi-1     |    Phi-2     |    Phi-0     |
+------------------------------------------------------
+| 1     | 0.989169     | 0.009940     | 0.042403     |
+------------------------------------------------------
+| 2     | 1.241125     | -0.246305    | 0.088266     |
+------------------------------------------------------
+| 3     | 1.400200     | -0.421582    | 0.156683     |
+------------------------------------------------------
+| 4     | 1.029347     | -0.102451    | 0.356199     |
+------------------------------------------------------
+| 5     | 0.427188     | 0.155162     | 0.852293     |
+------------------------------------------------------
+| 6     | 0.047034     | 0.015270     | 0.998742     |
+------------------------------------------------------
+Starting nowcast computation.
+Computing nowcast for time step 1... done.
+Computing nowcast for time step 2... done.
+Computing nowcast for time step 3... done.
+Computing nowcast for time step 4... done.
+Computing nowcast for time step 5... done.
+Computing nowcast for time step 6... done.
+Computing nowcast for time step 7... done.
+Computing nowcast for time step 8... done.
+Computing nowcast for time step 9... done.
+Computing nowcast for time step 10... done.
+Computing nowcast for time step 11... done.
+Computing nowcast for time step 12... done.
+Computing nowcast for time step 13... done.
+Computing nowcast for time step 14... done.
+Computing nowcast for time step 15... done.
+Computing nowcast for time step 16... done.
+Computing nowcast for time step 17... done.
+Computing nowcast for time step 18... done.
+Computing STEPS nowcast:
+------------------------
+
+Inputs:
+-------
+input dimensions: 1826x1160
+km/pixel:         1
+time step:        5 minutes
+
+Methods:
+--------
+extrapolation:          semilagrangian
+bandpass filter:        gaussian
+decomposition:          fft
+noise generator:        None
+noise adjustment:       no
+velocity perturbator:   None
+conditional statistics: no
+precip. mask method:    incremental
+probability matching:   cdf
+FFT method:             pyfftw
+
+Parameters:
+-----------
+number of time steps:     18
+ensemble size:            1
+parallel threads:         30
+number of cascade levels: 6
+order of the AR(p) model: 2
+precip. intensity threshold: -10
+************************************************
+* Correlation coefficients for cascade levels: *
+************************************************
+-----------------------------------------
+| Level |     Lag-1     |     Lag-2     |
+-----------------------------------------
+| 1     | 0.999101      | 0.998220      |
+-----------------------------------------
+| 2     | 0.995844      | 0.989663      |
+-----------------------------------------
+| 3     | 0.984959      | 0.957557      |
+-----------------------------------------
+| 4     | 0.933690      | 0.858640      |
+-----------------------------------------
+| 5     | 0.505644      | 0.371167      |
+-----------------------------------------
+| 6     | 0.047764      | 0.017517      |
+-----------------------------------------
+****************************************
+* AR(p) parameters for cascade levels: *
+****************************************
+------------------------------------------------------
+| Level |    Phi-1     |    Phi-2     |    Phi-0     |
+------------------------------------------------------
+| 1     | 0.989169     | 0.009940     | 0.042403     |
+------------------------------------------------------
+| 2     | 1.241125     | -0.246305    | 0.088266     |
+------------------------------------------------------
+| 3     | 1.400200     | -0.421582    | 0.156683     |
+------------------------------------------------------
+| 4     | 1.029347     | -0.102451    | 0.356199     |
+------------------------------------------------------
+| 5     | 0.427188     | 0.155162     | 0.852293     |
+------------------------------------------------------
+| 6     | 0.047034     | 0.015270     | 0.998742     |
+------------------------------------------------------
+Starting nowcast computation.
+Computing nowcast for time step 1... done.
+Computing nowcast for time step 2... done.
+Computing nowcast for time step 3... done.
+Computing nowcast for time step 4... done.
+Computing nowcast for time step 5... done.
+Computing nowcast for time step 6... done.
+Computing nowcast for time step 7... done.
+Computing nowcast for time step 8... done.
+Computing nowcast for time step 9... done.
+Computing nowcast for time step 10... done.
+Computing nowcast for time step 11... done.
+Computing nowcast for time step 12... done.
+Computing nowcast for time step 13... done.
+Computing nowcast for time step 14... done.
+Computing nowcast for time step 15... done.
+Computing nowcast for time step 16... done.
+Computing nowcast for time step 17... done.
+Computing nowcast for time step 18... done.
+Computing extrapolation nowcast from a 1826x1160 input grid... pe 15.11.2019 15.20.38 +0200
+~/src
+/home/users/ppn/src/fmippn-run-and-distribution: No such file or directory.
+PPN process for 201911151315 ended at
+pe 15.11.2019 15.20.38 +0200
+
+PPN process for 201911151320 started at
+pe 15.11.2019 15.23.07 +0200
+~/devel/fmippn/src ~/src
+Pysteps configuration file found at: /home/users/ppn/devel/fmippn/src/pystepsrc
+
+Computing the motion field with the Lucas-Kanade method.
+--- LK found 373 sparse vectors ---
+--- 94 sparse vectors left for interpolation ---
+--- 6.68 seconds ---
+Computing STEPS nowcast:
+------------------------
+
+Inputs:
+-------
+input dimensions: 1826x1160
+km/pixel:         1
+time step:        5 minutes
+
+Methods:
+--------
+extrapolation:          semilagrangian
+bandpass filter:        gaussian
+decomposition:          fft
+noise generator:        nonparametric
+noise adjustment:       no
+velocity perturbator:   bps
+conditional statistics: no
+precip. mask method:    incremental
+probability matching:   cdf
+FFT method:             pyfftw
+
+Parameters:
+-----------
+number of time steps:     18
+ensemble size:            15
+parallel threads:         30
+number of cascade levels: 6
+order of the AR(p) model: 2
+velocity perturbations, parallel:      0,0,0
+velocity perturbations, perpendicular: 0,0,0
+precip. intensity threshold: -10
+************************************************
+* Correlation coefficients for cascade levels: *
+************************************************
+-----------------------------------------
+| Level |     Lag-1     |     Lag-2     |
+-----------------------------------------
+| 1     | 0.999307      | 0.997183      |
+-----------------------------------------
+| 2     | 0.997696      | 0.988471      |
+-----------------------------------------
+| 3     | 0.986796      | 0.956888      |
+-----------------------------------------
+| 4     | 0.930340      | 0.868447      |
+-----------------------------------------
+| 5     | 0.495984      | 0.385033      |
+-----------------------------------------
+| 6     | 0.052263      | 0.027332      |
+-----------------------------------------
+****************************************
+* AR(p) parameters for cascade levels: *
+****************************************
+------------------------------------------------------
+| Level |    Phi-1     |    Phi-2     |    Phi-0     |
+------------------------------------------------------
+| 1     | 1.926915     | -0.928251    | 0.013840     |
+------------------------------------------------------
+| 2     | 1.868621     | -0.872936    | 0.033096     |
+------------------------------------------------------
+| 3     | 1.621726     | -0.643425    | 0.123986     |
+------------------------------------------------------
+| 4     | 0.910179     | 0.021671     | 0.366611     |
+------------------------------------------------------
+| 5     | 0.404528     | 0.184394     | 0.853442     |
+------------------------------------------------------
+| 6     | 0.050974     | 0.024668     | 0.998329     |
+------------------------------------------------------
+Starting nowcast computation.
+Computing nowcast for time step 1... done.
+Computing nowcast for time step 2... done.
+Computing nowcast for time step 3... done.
+Computing nowcast for time step 4... done.
+Computing nowcast for time step 5... done.
+Computing nowcast for time step 6... done.
+Computing nowcast for time step 7... done.
+Computing nowcast for time step 8... done.
+Computing nowcast for time step 9... done.
+Computing nowcast for time step 10... done.
+Computing nowcast for time step 11... done.
+Computing nowcast for time step 12... done.
+Computing nowcast for time step 13... done.
+Computing nowcast for time step 14... done.
+Computing nowcast for time step 15... done.
+Computing nowcast for time step 16... done.
+Computing nowcast for time step 17... done.
+Computing nowcast for time step 18... done.
+Computing STEPS nowcast:
+------------------------
+
+Inputs:
+-------
+input dimensions: 1826x1160
+km/pixel:         1
+time step:        5 minutes
+
+Methods:
+--------
+extrapolation:          semilagrangian
+bandpass filter:        gaussian
+decomposition:          fft
+noise generator:        None
+noise adjustment:       no
+velocity perturbator:   None
+conditional statistics: no
+precip. mask method:    incremental
+probability matching:   cdf
+FFT method:             pyfftw
+
+Parameters:
+-----------
+number of time steps:     18
+ensemble size:            1
+parallel threads:         30
+number of cascade levels: 6
+order of the AR(p) model: 2
+precip. intensity threshold: -10
+************************************************
+* Correlation coefficients for cascade levels: *
+************************************************
+-----------------------------------------
+| Level |     Lag-1     |     Lag-2     |
+-----------------------------------------
+| 1     | 0.999307      | 0.997183      |
+-----------------------------------------
+| 2     | 0.997696      | 0.988471      |
+-----------------------------------------
+| 3     | 0.986796      | 0.956888      |
+-----------------------------------------
+| 4     | 0.930340      | 0.868447      |
+-----------------------------------------
+| 5     | 0.495984      | 0.385033      |
+-----------------------------------------
+| 6     | 0.052263      | 0.027332      |
+-----------------------------------------
+****************************************
+* AR(p) parameters for cascade levels: *
+****************************************
+------------------------------------------------------
+| Level |    Phi-1     |    Phi-2     |    Phi-0     |
+------------------------------------------------------
+| 1     | 1.926915     | -0.928251    | 0.013840     |
+------------------------------------------------------
+| 2     | 1.868621     | -0.872936    | 0.033096     |
+------------------------------------------------------
+| 3     | 1.621726     | -0.643425    | 0.123986     |
+------------------------------------------------------
+| 4     | 0.910179     | 0.021671     | 0.366611     |
+------------------------------------------------------
+| 5     | 0.404528     | 0.184394     | 0.853442     |
+------------------------------------------------------
+| 6     | 0.050974     | 0.024668     | 0.998329     |
+------------------------------------------------------
+Starting nowcast computation.
+Computing nowcast for time step 1... done.
+Computing nowcast for time step 2... done.
+Computing nowcast for time step 3... done.
+Computing nowcast for time step 4... done.
+Computing nowcast for time step 5... done.
+Computing nowcast for time step 6... done.
+Computing nowcast for time step 7... done.
+Computing nowcast for time step 8... done.
+Computing nowcast for time step 9... done.
+Computing nowcast for time step 10... done.
+Computing nowcast for time step 11... done.
+Computing nowcast for time step 12... done.
+Computing nowcast for time step 13... done.
+Computing nowcast for time step 14... done.
+Computing nowcast for time step 15... done.
+Computing nowcast for time step 16... done.
+Computing nowcast for time step 17... done.
+Computing nowcast for time step 18... done.
+Computing extrapolation nowcast from a 1826x1160 input grid... pe 15.11.2019 15.27.06 +0200
+~/src
+Lead=00
+Members: 00 01 02 03 04 05 06 07 08 09 10 11 12 13 14 
+Mean lead=00  201911151325
+Deterministic lead=00  201911151325
+Unperturbed lead=00  201911151325
+Lead=01
+Members: 00 01 02 03 04 05 06 07 08 09 10 11 12 13 14 
+Mean lead=01  201911151330
+Deterministic lead=01  201911151330
+Unperturbed lead=01  201911151330
+Lead=02
+Members: 00 01 02 03 04 05 06 07 08 09 10 11 12 13 14 
+Mean lead=02  201911151335
+Deterministic lead=02  201911151335
+Unperturbed lead=02  201911151335
+Lead=03
+Members: 00 01 02 03 04 05 06 07 08 09 10 11 12 13 14 
+Mean lead=03  201911151340
+Deterministic lead=03  201911151340
+Unperturbed lead=03  201911151340
+Lead=04
+Members: 00 01 02 03 04 05 06 07 08 09 10 11 12 13 14 
+Mean lead=04  201911151345
+Deterministic lead=04  201911151345
+Unperturbed lead=04  201911151345
+Lead=05
+Members: 00 01 02 03 04 05 06 07 08 09 10 11 12 13 14 
+Mean lead=05  201911151350
+Deterministic lead=05  201911151350
+Unperturbed lead=05  201911151350
+Lead=06
+Members: 00 01 02 03 04 05 06 07 08 09 10 11 12 13 14 
+Mean lead=06  201911151355
+Deterministic lead=06  201911151355
+Unperturbed lead=06  201911151355
+Lead=07
+Members: 00 01 02 03 04 05 06 07 08 09 10 11 12 13 14 
+Mean lead=07  201911151400
+Deterministic lead=07  201911151400
+Unperturbed lead=07  201911151400
+Lead=08
+Members: 00 01 02 03 04 05 06 07 08 09 10 11 12 13 14 
+Mean lead=08  201911151405
+Deterministic lead=08  201911151405
+Unperturbed lead=08  201911151405
+Lead=09
+Members: 00 01 02 03 04 05 06 07 08 09 10 11 12 13 14 
+Mean lead=09  201911151410
+Deterministic lead=09  201911151410
+Unperturbed lead=09  201911151410
+Lead=10
+Members: 00 01 02 03 04 05 06 07 08 09 10 11 12 13 14 
+Mean lead=10  201911151415
+Deterministic lead=10  201911151415
+Unperturbed lead=10  201911151415
+Lead=11
+Members: 00 01 02 03 04 05 06 07 08 09 10 11 12 13 14 
+Mean lead=11  201911151420
+Deterministic lead=11  201911151420
+Unperturbed lead=11  201911151420
+Lead=12
+Members: 00 01 02 03 04 05 06 07 08 09 10 11 12 13 14 
+Mean lead=12  201911151425
+Deterministic lead=12  201911151425
+Unperturbed lead=12  201911151425
+Lead=13
+Members: 00 01 02 03 04 05 06 07 08 09 10 11 12 13 14 
+Mean lead=13  201911151430
+Deterministic lead=13  201911151430
+Unperturbed lead=13  201911151430
+Lead=14
+Members: 00 01 02 03 04 05 06 07 08 09 10 11 12 13 14 
+Mean lead=14  201911151435
+Deterministic lead=14  201911151435
+Unperturbed lead=14  201911151435
+Lead=15
+Members: 00 01 02 03 04 05 06 07 08 09 10 11 12 13 14 
+Mean lead=15  201911151440
+Deterministic lead=15  201911151440
+Unperturbed lead=15  201911151440
+Lead=16
+Members: 00 01 02 03 04 05 06 07 08 09 10 11 12 13 14 
+Mean lead=16  201911151445
+Deterministic lead=16  201911151445
+Unperturbed lead=16  201911151445
+Lead=17
+Members: 00 01 02 03 04 05 06 07 08 09 10 11 12 13 14 
+Mean lead=17  201911151450
+Deterministic lead=17  201911151450
+Unperturbed lead=17  201911151450
+Lead=18
+Members: 
+Mean lead=18  201911151450
+/home/users/ppn/src/fmippn-vc/fmippn-run-and-distribution/gdmap: Command not found.
+pamtogif: Unable to open file 'M_201911151320-201911151325_SUOMI1_dBZ.ppm' for reading.  fopen() returns errno 2 (No such file or directory)
+/home/users/ppn/src/fmippn-vc/fmippn-run-and-distribution/gdmap: Command not found.
+pamtogif: Unable to open file 'D_201911151320-201911151325_SUOMI1_dBZ.ppm' for reading.  fopen() returns errno 2 (No such file or directory)
+/home/users/ppn/src/fmippn-vc/fmippn-run-and-distribution/gdmap: Command not found.
+pamtogif: Unable to open file 'U_201911151320-201911151325_SUOMI1_dBZ.ppm' for reading.  fopen() returns errno 2 (No such file or directory)
+201911151325
+/home/users/ppn/src/fmippn-vc/fmippn-run-and-distribution/gdmap: Command not found.
+pamtogif: Unable to open file 'M_201911151320-201911151330_SUOMI1_dBZ.ppm' for reading.  fopen() returns errno 2 (No such file or directory)
+/home/users/ppn/src/fmippn-vc/fmippn-run-and-distribution/gdmap: Command not found.
+pamtogif: Unable to open file 'D_201911151320-201911151330_SUOMI1_dBZ.ppm' for reading.  fopen() returns errno 2 (No such file or directory)
+/home/users/ppn/src/fmippn-vc/fmippn-run-and-distribution/gdmap: Command not found.
+pamtogif: Unable to open file 'U_201911151320-201911151330_SUOMI1_dBZ.ppm' for reading.  fopen() returns errno 2 (No such file or directory)
+201911151330
+/home/users/ppn/src/fmippn-vc/fmippn-run-and-distribution/gdmap: Command not found.
+pamtogif: Unable to open file 'M_201911151320-201911151335_SUOMI1_dBZ.ppm' for reading.  fopen() returns errno 2 (No such file or directory)
+/home/users/ppn/src/fmippn-vc/fmippn-run-and-distribution/gdmap: Command not found.
+pamtogif: Unable to open file 'D_201911151320-201911151335_SUOMI1_dBZ.ppm' for reading.  fopen() returns errno 2 (No such file or directory)
+/home/users/ppn/src/fmippn-vc/fmippn-run-and-distribution/gdmap: Command not found.
+pamtogif: Unable to open file 'U_201911151320-201911151335_SUOMI1_dBZ.ppm' for reading.  fopen() returns errno 2 (No such file or directory)
+201911151335
+/home/users/ppn/src/fmippn-vc/fmippn-run-and-distribution/gdmap: Command not found.
+pamtogif: Unable to open file 'M_201911151320-201911151340_SUOMI1_dBZ.ppm' for reading.  fopen() returns errno 2 (No such file or directory)
+/home/users/ppn/src/fmippn-vc/fmippn-run-and-distribution/gdmap: Command not found.
+pamtogif: Unable to open file 'D_201911151320-201911151340_SUOMI1_dBZ.ppm' for reading.  fopen() returns errno 2 (No such file or directory)
+/home/users/ppn/src/fmippn-vc/fmippn-run-and-distribution/gdmap: Command not found.
+pamtogif: Unable to open file 'U_201911151320-201911151340_SUOMI1_dBZ.ppm' for reading.  fopen() returns errno 2 (No such file or directory)
+201911151340
+/home/users/ppn/src/fmippn-vc/fmippn-run-and-distribution/gdmap: Command not found.
+pamtogif: Unable to open file 'M_201911151320-201911151345_SUOMI1_dBZ.ppm' for reading.  fopen() returns errno 2 (No such file or directory)
+/home/users/ppn/src/fmippn-vc/fmippn-run-and-distribution/gdmap: Command not found.
+pamtogif: Unable to open file 'D_201911151320-201911151345_SUOMI1_dBZ.ppm' for reading.  fopen() returns errno 2 (No such file or directory)
+/home/users/ppn/src/fmippn-vc/fmippn-run-and-distribution/gdmap: Command not found.
+pamtogif: Unable to open file 'U_201911151320-201911151345_SUOMI1_dBZ.ppm' for reading.  fopen() returns errno 2 (No such file or directory)
+201911151345
+/home/users/ppn/src/fmippn-vc/fmippn-run-and-distribution/gdmap: Command not found.
+pamtogif: Unable to open file 'M_201911151320-201911151350_SUOMI1_dBZ.ppm' for reading.  fopen() returns errno 2 (No such file or directory)
+/home/users/ppn/src/fmippn-vc/fmippn-run-and-distribution/gdmap: Command not found.
+pamtogif: Unable to open file 'D_201911151320-201911151350_SUOMI1_dBZ.ppm' for reading.  fopen() returns errno 2 (No such file or directory)
+/home/users/ppn/src/fmippn-vc/fmippn-run-and-distribution/gdmap: Command not found.
+pamtogif: Unable to open file 'U_201911151320-201911151350_SUOMI1_dBZ.ppm' for reading.  fopen() returns errno 2 (No such file or directory)
+201911151350
+/home/users/ppn/src/fmippn-vc/fmippn-run-and-distribution/gdmap: Command not found.
+pamtogif: Unable to open file 'M_201911151320-201911151355_SUOMI1_dBZ.ppm' for reading.  fopen() returns errno 2 (No such file or directory)
+/home/users/ppn/src/fmippn-vc/fmippn-run-and-distribution/gdmap: Command not found.
+pamtogif: Unable to open file 'D_201911151320-201911151355_SUOMI1_dBZ.ppm' for reading.  fopen() returns errno 2 (No such file or directory)
+/home/users/ppn/src/fmippn-vc/fmippn-run-and-distribution/gdmap: Command not found.
+pamtogif: Unable to open file 'U_201911151320-201911151355_SUOMI1_dBZ.ppm' for reading.  fopen() returns errno 2 (No such file or directory)
+201911151355
+/home/users/ppn/src/fmippn-vc/fmippn-run-and-distribution/gdmap: Command not found.
+pamtogif: Unable to open file 'M_201911151320-201911151400_SUOMI1_dBZ.ppm' for reading.  fopen() returns errno 2 (No such file or directory)
+/home/users/ppn/src/fmippn-vc/fmippn-run-and-distribution/gdmap: Command not found.
+pamtogif: Unable to open file 'D_201911151320-201911151400_SUOMI1_dBZ.ppm' for reading.  fopen() returns errno 2 (No such file or directory)
+/home/users/ppn/src/fmippn-vc/fmippn-run-and-distribution/gdmap: Command not found.
+pamtogif: Unable to open file 'U_201911151320-201911151400_SUOMI1_dBZ.ppm' for reading.  fopen() returns errno 2 (No such file or directory)
+201911151400
+/home/users/ppn/src/fmippn-vc/fmippn-run-and-distribution/gdmap: Command not found.
+pamtogif: Unable to open file 'M_201911151320-201911151405_SUOMI1_dBZ.ppm' for reading.  fopen() returns errno 2 (No such file or directory)
+/home/users/ppn/src/fmippn-vc/fmippn-run-and-distribution/gdmap: Command not found.
+pamtogif: Unable to open file 'D_201911151320-201911151405_SUOMI1_dBZ.ppm' for reading.  fopen() returns errno 2 (No such file or directory)
+/home/users/ppn/src/fmippn-vc/fmippn-run-and-distribution/gdmap: Command not found.
+pamtogif: Unable to open file 'U_201911151320-201911151405_SUOMI1_dBZ.ppm' for reading.  fopen() returns errno 2 (No such file or directory)
+201911151405
+/home/users/ppn/src/fmippn-vc/fmippn-run-and-distribution/gdmap: Command not found.
+pamtogif: Unable to open file 'M_201911151320-201911151410_SUOMI1_dBZ.ppm' for reading.  fopen() returns errno 2 (No such file or directory)
+/home/users/ppn/src/fmippn-vc/fmippn-run-and-distribution/gdmap: Command not found.
+pamtogif: Unable to open file 'D_201911151320-201911151410_SUOMI1_dBZ.ppm' for reading.  fopen() returns errno 2 (No such file or directory)
+/home/users/ppn/src/fmippn-vc/fmippn-run-and-distribution/gdmap: Command not found.
+pamtogif: Unable to open file 'U_201911151320-201911151410_SUOMI1_dBZ.ppm' for reading.  fopen() returns errno 2 (No such file or directory)
+201911151410
+/home/users/ppn/src/fmippn-vc/fmippn-run-and-distribution/gdmap: Command not found.
+pamtogif: Unable to open file 'M_201911151320-201911151415_SUOMI1_dBZ.ppm' for reading.  fopen() returns errno 2 (No such file or directory)
+/home/users/ppn/src/fmippn-vc/fmippn-run-and-distribution/gdmap: Command not found.
+pamtogif: Unable to open file 'D_201911151320-201911151415_SUOMI1_dBZ.ppm' for reading.  fopen() returns errno 2 (No such file or directory)
+/home/users/ppn/src/fmippn-vc/fmippn-run-and-distribution/gdmap: Command not found.
+pamtogif: Unable to open file 'U_201911151320-201911151415_SUOMI1_dBZ.ppm' for reading.  fopen() returns errno 2 (No such file or directory)
+201911151415
+/home/users/ppn/src/fmippn-vc/fmippn-run-and-distribution/gdmap: Command not found.
+pamtogif: Unable to open file 'M_201911151320-201911151420_SUOMI1_dBZ.ppm' for reading.  fopen() returns errno 2 (No such file or directory)
+/home/users/ppn/src/fmippn-vc/fmippn-run-and-distribution/gdmap: Command not found.
+pamtogif: Unable to open file 'D_201911151320-201911151420_SUOMI1_dBZ.ppm' for reading.  fopen() returns errno 2 (No such file or directory)
+/home/users/ppn/src/fmippn-vc/fmippn-run-and-distribution/gdmap: Command not found.
+pamtogif: Unable to open file 'U_201911151320-201911151420_SUOMI1_dBZ.ppm' for reading.  fopen() returns errno 2 (No such file or directory)
+201911151420
+/home/users/ppn/src/fmippn-vc/fmippn-run-and-distribution/gdmap: Command not found.
+pamtogif: Unable to open file 'M_201911151320-201911151425_SUOMI1_dBZ.ppm' for reading.  fopen() returns errno 2 (No such file or directory)
+/home/users/ppn/src/fmippn-vc/fmippn-run-and-distribution/gdmap: Command not found.
+pamtogif: Unable to open file 'D_201911151320-201911151425_SUOMI1_dBZ.ppm' for reading.  fopen() returns errno 2 (No such file or directory)
+/home/users/ppn/src/fmippn-vc/fmippn-run-and-distribution/gdmap: Command not found.
+pamtogif: Unable to open file 'U_201911151320-201911151425_SUOMI1_dBZ.ppm' for reading.  fopen() returns errno 2 (No such file or directory)
+201911151425
+/home/users/ppn/src/fmippn-vc/fmippn-run-and-distribution/gdmap: Command not found.
+pamtogif: Unable to open file 'M_201911151320-201911151430_SUOMI1_dBZ.ppm' for reading.  fopen() returns errno 2 (No such file or directory)
+/home/users/ppn/src/fmippn-vc/fmippn-run-and-distribution/gdmap: Command not found.
+pamtogif: Unable to open file 'D_201911151320-201911151430_SUOMI1_dBZ.ppm' for reading.  fopen() returns errno 2 (No such file or directory)
+/home/users/ppn/src/fmippn-vc/fmippn-run-and-distribution/gdmap: Command not found.
+pamtogif: Unable to open file 'U_201911151320-201911151430_SUOMI1_dBZ.ppm' for reading.  fopen() returns errno 2 (No such file or directory)
+201911151430
+/home/users/ppn/src/fmippn-vc/fmippn-run-and-distribution/gdmap: Command not found.
+pamtogif: Unable to open file 'M_201911151320-201911151435_SUOMI1_dBZ.ppm' for reading.  fopen() returns errno 2 (No such file or directory)
+/home/users/ppn/src/fmippn-vc/fmippn-run-and-distribution/gdmap: Command not found.
+pamtogif: Unable to open file 'D_201911151320-201911151435_SUOMI1_dBZ.ppm' for reading.  fopen() returns errno 2 (No such file or directory)
+/home/users/ppn/src/fmippn-vc/fmippn-run-and-distribution/gdmap: Command not found.
+pamtogif: Unable to open file 'U_201911151320-201911151435_SUOMI1_dBZ.ppm' for reading.  fopen() returns errno 2 (No such file or directory)
+201911151435
+/home/users/ppn/src/fmippn-vc/fmippn-run-and-distribution/gdmap: Command not found.
+pamtogif: Unable to open file 'M_201911151320-201911151440_SUOMI1_dBZ.ppm' for reading.  fopen() returns errno 2 (No such file or directory)
+/home/users/ppn/src/fmippn-vc/fmippn-run-and-distribution/gdmap: Command not found.
+pamtogif: Unable to open file 'D_201911151320-201911151440_SUOMI1_dBZ.ppm' for reading.  fopen() returns errno 2 (No such file or directory)
+/home/users/ppn/src/fmippn-vc/fmippn-run-and-distribution/gdmap: Command not found.
+pamtogif: Unable to open file 'U_201911151320-201911151440_SUOMI1_dBZ.ppm' for reading.  fopen() returns errno 2 (No such file or directory)
+201911151440
+/home/users/ppn/src/fmippn-vc/fmippn-run-and-distribution/gdmap: Command not found.
+pamtogif: Unable to open file 'M_201911151320-201911151445_SUOMI1_dBZ.ppm' for reading.  fopen() returns errno 2 (No such file or directory)
+/home/users/ppn/src/fmippn-vc/fmippn-run-and-distribution/gdmap: Command not found.
+pamtogif: Unable to open file 'D_201911151320-201911151445_SUOMI1_dBZ.ppm' for reading.  fopen() returns errno 2 (No such file or directory)
+/home/users/ppn/src/fmippn-vc/fmippn-run-and-distribution/gdmap: Command not found.
+pamtogif: Unable to open file 'U_201911151320-201911151445_SUOMI1_dBZ.ppm' for reading.  fopen() returns errno 2 (No such file or directory)
+201911151445
+/home/users/ppn/src/fmippn-vc/fmippn-run-and-distribution/gdmap: Command not found.
+pamtogif: Unable to open file 'M_201911151320-201911151450_SUOMI1_dBZ.ppm' for reading.  fopen() returns errno 2 (No such file or directory)
+/home/users/ppn/src/fmippn-vc/fmippn-run-and-distribution/gdmap: Command not found.
+pamtogif: Unable to open file 'D_201911151320-201911151450_SUOMI1_dBZ.ppm' for reading.  fopen() returns errno 2 (No such file or directory)
+/home/users/ppn/src/fmippn-vc/fmippn-run-and-distribution/gdmap: Command not found.
+pamtogif: Unable to open file 'U_201911151320-201911151450_SUOMI1_dBZ.ppm' for reading.  fopen() returns errno 2 (No such file or directory)
+201911151450
+ls: No match.
+foreach: No match.
+PPN process for 201911151320 ended at
+pe 15.11.2019 15.27.23 +0200
+
+PPN process for 201911151330 started at
+pe 15.11.2019 15.32.05 +0200
+~/devel/fmippn/src ~/src
+Pysteps configuration file found at: /home/users/ppn/devel/fmippn/src/pystepsrc
+
+Computing the motion field with the Lucas-Kanade method.
+--- LK found 355 sparse vectors ---
+--- 107 sparse vectors left for interpolation ---
+--- 6.92 seconds ---
+Computing STEPS nowcast:
+------------------------
+
+Inputs:
+-------
+input dimensions: 1826x1160
+km/pixel:         1
+time step:        5 minutes
+
+Methods:
+--------
+extrapolation:          semilagrangian
+bandpass filter:        gaussian
+decomposition:          fft
+noise generator:        nonparametric
+noise adjustment:       no
+velocity perturbator:   bps
+conditional statistics: no
+precip. mask method:    incremental
+probability matching:   cdf
+FFT method:             pyfftw
+
+Parameters:
+-----------
+number of time steps:     18
+ensemble size:            15
+parallel threads:         30
+number of cascade levels: 6
+order of the AR(p) model: 2
+velocity perturbations, parallel:      0,0,0
+velocity perturbations, perpendicular: 0,0,0
+precip. intensity threshold: -10
+************************************************
+* Correlation coefficients for cascade levels: *
+************************************************
+-----------------------------------------
+| Level |     Lag-1     |     Lag-2     |
+-----------------------------------------
+| 1     | 0.999554      | 0.997272      |
+-----------------------------------------
+| 2     | 0.998088      | 0.988750      |
+-----------------------------------------
+| 3     | 0.987954      | 0.952484      |
+-----------------------------------------
+| 4     | 0.932423      | 0.854020      |
+-----------------------------------------
+| 5     | 0.514757      | 0.381939      |
+-----------------------------------------
+| 6     | 0.059101      | 0.033294      |
+-----------------------------------------
+****************************************
+* AR(p) parameters for cascade levels: *
+****************************************
+------------------------------------------------------
+| Level |    Phi-1     |    Phi-2     |    Phi-0     |
+------------------------------------------------------
+| 1     | 1.941129     | -0.941996    | 0.010025     |
+------------------------------------------------------
+| 2     | 1.879989     | -0.883590    | 0.028940     |
+------------------------------------------------------
+| 3     | 1.711119     | -0.731982    | 0.105433     |
+------------------------------------------------------
+| 4     | 1.042332     | -0.117874    | 0.358849     |
+------------------------------------------------------
+| 5     | 0.432845     | 0.159129     | 0.846412     |
+------------------------------------------------------
+| 6     | 0.057334     | 0.029906     | 0.997805     |
+------------------------------------------------------
+Starting nowcast computation.
+Computing nowcast for time step 1... done.
+Computing nowcast for time step 2... done.
+Computing nowcast for time step 3... done.
+Computing nowcast for time step 4... done.
+Computing nowcast for time step 5... done.
+Computing nowcast for time step 6... done.
+Computing nowcast for time step 7... done.
+Computing nowcast for time step 8... done.
+Computing nowcast for time step 9... done.
+Computing nowcast for time step 10... done.
+Computing nowcast for time step 11... done.
+Computing nowcast for time step 12... done.
+Computing nowcast for time step 13... done.
+Computing nowcast for time step 14... done.
+Computing nowcast for time step 15... done.
+Computing nowcast for time step 16... done.
+Computing nowcast for time step 17... done.
+Computing nowcast for time step 18... done.
+Computing STEPS nowcast:
+------------------------
+
+Inputs:
+-------
+input dimensions: 1826x1160
+km/pixel:         1
+time step:        5 minutes
+
+Methods:
+--------
+extrapolation:          semilagrangian
+bandpass filter:        gaussian
+decomposition:          fft
+noise generator:        None
+noise adjustment:       no
+velocity perturbator:   None
+conditional statistics: no
+precip. mask method:    incremental
+probability matching:   cdf
+FFT method:             pyfftw
+
+Parameters:
+-----------
+number of time steps:     18
+ensemble size:            1
+parallel threads:         30
+number of cascade levels: 6
+order of the AR(p) model: 2
+precip. intensity threshold: -10
+************************************************
+* Correlation coefficients for cascade levels: *
+************************************************
+-----------------------------------------
+| Level |     Lag-1     |     Lag-2     |
+-----------------------------------------
+| 1     | 0.999554      | 0.997272      |
+-----------------------------------------
+| 2     | 0.998088      | 0.988750      |
+-----------------------------------------
+| 3     | 0.987954      | 0.952484      |
+-----------------------------------------
+| 4     | 0.932423      | 0.854020      |
+-----------------------------------------
+| 5     | 0.514757      | 0.381939      |
+-----------------------------------------
+| 6     | 0.059101      | 0.033294      |
+-----------------------------------------
+****************************************
+* AR(p) parameters for cascade levels: *
+****************************************
+------------------------------------------------------
+| Level |    Phi-1     |    Phi-2     |    Phi-0     |
+------------------------------------------------------
+| 1     | 1.941129     | -0.941996    | 0.010025     |
+------------------------------------------------------
+| 2     | 1.879989     | -0.883590    | 0.028940     |
+------------------------------------------------------
+| 3     | 1.711119     | -0.731982    | 0.105433     |
+------------------------------------------------------
+| 4     | 1.042332     | -0.117874    | 0.358849     |
+------------------------------------------------------
+| 5     | 0.432845     | 0.159129     | 0.846412     |
+------------------------------------------------------
+| 6     | 0.057334     | 0.029906     | 0.997805     |
+------------------------------------------------------
+Starting nowcast computation.
+Computing nowcast for time step 1... done.
+Computing nowcast for time step 2... done.
+Computing nowcast for time step 3... done.
+Computing nowcast for time step 4... done.
+Computing nowcast for time step 5... done.
+Computing nowcast for time step 6... done.
+Computing nowcast for time step 7... done.
+Computing nowcast for time step 8... done.
+Computing nowcast for time step 9... done.
+Computing nowcast for time step 10... done.
+Computing nowcast for time step 11... done.
+Computing nowcast for time step 12... done.
+Computing nowcast for time step 13... done.
+Computing nowcast for time step 14... done.
+Computing nowcast for time step 15... done.
+Computing nowcast for time step 16... done.
+Computing nowcast for time step 17... done.
+Computing nowcast for time step 18... done.
+Computing extrapolation nowcast from a 1826x1160 input grid... pe 15.11.2019 15.36.05 +0200
+~/src
+Lead=00
+Members: 00 01 02 03 04 05 06 07 08 09 10 11 12 13 14 
+Mean lead=00  201911151335
+Deterministic lead=00  201911151335
+Unperturbed lead=00  201911151335
+Lead=01
+Members: 00 01 02 03 04 05 06 07 08 09 10 11 12 13 14 
+Mean lead=01  201911151340
+Deterministic lead=01  201911151340
+Unperturbed lead=01  201911151340
+Lead=02
+Members: 00 01 02 03 04 05 06 07 08 09 10 11 12 13 14 
+Mean lead=02  201911151345
+Deterministic lead=02  201911151345
+Unperturbed lead=02  201911151345
+Lead=03
+Members: 00 01 02 03 04 05 06 07 08 09 10 11 12 13 14 
+Mean lead=03  201911151350
+Deterministic lead=03  201911151350
+Unperturbed lead=03  201911151350
+Lead=04
+Members: 00 01 02 03 04 05 06 07 08 09 10 11 12 13 14 
+Mean lead=04  201911151355
+Deterministic lead=04  201911151355
+Unperturbed lead=04  201911151355
+Lead=05
+Members: 00 01 02 03 04 05 06 07 08 09 10 11 12 13 14 
+Mean lead=05  201911151400
+Deterministic lead=05  201911151400
+Unperturbed lead=05  201911151400
+Lead=06
+Members: 00 01 02 03 04 05 06 07 08 09 10 11 12 13 14 
+Mean lead=06  201911151405
+Deterministic lead=06  201911151405
+Unperturbed lead=06  201911151405
+Lead=07
+Members: 00 01 02 03 04 05 06 07 08 09 10 11 12 13 14 
+Mean lead=07  201911151410
+Deterministic lead=07  201911151410
+Unperturbed lead=07  201911151410
+Lead=08
+Members: 00 01 02 03 04 05 06 07 08 09 10 11 12 13 14 
+Mean lead=08  201911151415
+Deterministic lead=08  201911151415
+Unperturbed lead=08  201911151415
+Lead=09
+Members: 00 01 02 03 04 05 06 07 08 09 10 11 12 13 14 
+Mean lead=09  201911151420
+Deterministic lead=09  201911151420
+Unperturbed lead=09  201911151420
+Lead=10
+Members: 00 01 02 03 04 05 06 07 08 09 10 11 12 13 14 
+Mean lead=10  201911151425
+Deterministic lead=10  201911151425
+Unperturbed lead=10  201911151425
+Lead=11
+Members: 00 01 02 03 04 05 06 07 08 09 10 11 12 13 14 
+Mean lead=11  201911151430
+Deterministic lead=11  201911151430
+Unperturbed lead=11  201911151430
+Lead=12
+Members: 00 01 02 03 04 05 06 07 08 09 10 11 12 13 14 
+Mean lead=12  201911151435
+Deterministic lead=12  201911151435
+Unperturbed lead=12  201911151435
+Lead=13
+Members: 00 01 02 03 04 05 06 07 08 09 10 11 12 13 14 
+Mean lead=13  201911151440
+Deterministic lead=13  201911151440
+Unperturbed lead=13  201911151440
+Lead=14
+Members: 00 01 02 03 04 05 06 07 08 09 10 11 12 13 14 
+Mean lead=14  201911151445
+Deterministic lead=14  201911151445
+Unperturbed lead=14  201911151445
+Lead=15
+Members: 00 01 02 03 04 05 06 07 08 09 10 11 12 13 14 
+Mean lead=15  201911151450
+Deterministic lead=15  201911151450
+Unperturbed lead=15  201911151450
+Lead=16
+Members: 00 01 02 03 04 05 06 07 08 09 10 11 12 13 14 
+Mean lead=16  201911151455
+Deterministic lead=16  201911151455
+Unperturbed lead=16  201911151455
+Lead=17
+Members: 00 01 02 03 04 05 06 07 08 09 10 11 12 13 14 
+Mean lead=17  201911151500
+Deterministic lead=17  201911151500
+Unperturbed lead=17  201911151500
+Lead=18
+Members: 
+Mean lead=18  201911151500
+M_201911151330-201911151335_SUOMI1_dBZ.pgm
+PPN ensemble mean dBZ 
+15.11.2019 13:30 -> 13:35 UTC
+pamtogif: computing colormap...
+pamtogif: 11 colors found
+D_201911151330-201911151335_SUOMI1_dBZ.pgm
+PPN deterministic dBZ 
+15.11.2019 13:30 -> 13:35 UTC
+pamtogif: computing colormap...
+pamtogif: 13 colors found
+U_201911151330-201911151335_SUOMI1_dBZ.pgm
+PPN unperturbed dBZ 
+15.11.2019 13:30 -> 13:35 UTC
+pamtogif: computing colormap...
+pamtogif: 13 colors found
+201911151335
+M_201911151330-201911151340_SUOMI1_dBZ.pgm
+PPN ensemble mean dBZ 
+15.11.2019 13:30 -> 13:40 UTC
+pamtogif: computing colormap...
+pamtogif: 12 colors found
+D_201911151330-201911151340_SUOMI1_dBZ.pgm
+PPN deterministic dBZ 
+15.11.2019 13:30 -> 13:40 UTC
+pamtogif: computing colormap...
+pamtogif: 13 colors found
+U_201911151330-201911151340_SUOMI1_dBZ.pgm
+PPN unperturbed dBZ 
+15.11.2019 13:30 -> 13:40 UTC
+pamtogif: computing colormap...
+pamtogif: 13 colors found
+201911151340
+M_201911151330-201911151345_SUOMI1_dBZ.pgm
+PPN ensemble mean dBZ 
+15.11.2019 13:30 -> 13:45 UTC
+pamtogif: computing colormap...
+pamtogif: 11 colors found
+D_201911151330-201911151345_SUOMI1_dBZ.pgm
+PPN deterministic dBZ 
+15.11.2019 13:30 -> 13:45 UTC
+pamtogif: computing colormap...
+pamtogif: 13 colors found
+U_201911151330-201911151345_SUOMI1_dBZ.pgm
+PPN unperturbed dBZ 
+15.11.2019 13:30 -> 13:45 UTC
+pamtogif: computing colormap...
+pamtogif: 13 colors found
+201911151345
+M_201911151330-201911151350_SUOMI1_dBZ.pgm
+PPN ensemble mean dBZ 
+15.11.2019 13:30 -> 13:50 UTC
+pamtogif: computing colormap...
+pamtogif: 10 colors found
+D_201911151330-201911151350_SUOMI1_dBZ.pgm
+PPN deterministic dBZ 
+15.11.2019 13:30 -> 13:50 UTC
+pamtogif: computing colormap...
+pamtogif: 12 colors found
+U_201911151330-201911151350_SUOMI1_dBZ.pgm
+PPN unperturbed dBZ 
+15.11.2019 13:30 -> 13:50 UTC
+pamtogif: computing colormap...
+pamtogif: 13 colors found
+201911151350
+M_201911151330-201911151355_SUOMI1_dBZ.pgm
+PPN ensemble mean dBZ 
+15.11.2019 13:30 -> 13:55 UTC
+pamtogif: computing colormap...
+pamtogif: 10 colors found
+D_201911151330-201911151355_SUOMI1_dBZ.pgm
+PPN deterministic dBZ 
+15.11.2019 13:30 -> 13:55 UTC
+pamtogif: computing colormap...
+pamtogif: 11 colors found
+U_201911151330-201911151355_SUOMI1_dBZ.pgm
+PPN unperturbed dBZ 
+15.11.2019 13:30 -> 13:55 UTC
+pamtogif: computing colormap...
+pamtogif: 13 colors found
+201911151355
+M_201911151330-201911151400_SUOMI1_dBZ.pgm
+PPN ensemble mean dBZ 
+15.11.2019 13:30 -> 14:00 UTC
+pamtogif: computing colormap...
+pamtogif: 10 colors found
+D_201911151330-201911151400_SUOMI1_dBZ.pgm
+PPN deterministic dBZ 
+15.11.2019 13:30 -> 14:00 UTC
+pamtogif: computing colormap...
+pamtogif: 11 colors found
+U_201911151330-201911151400_SUOMI1_dBZ.pgm
+PPN unperturbed dBZ 
+15.11.2019 13:30 -> 14:00 UTC
+pamtogif: computing colormap...
+pamtogif: 13 colors found
+201911151400
+M_201911151330-201911151405_SUOMI1_dBZ.pgm
+PPN ensemble mean dBZ 
+15.11.2019 13:30 -> 14:05 UTC
+pamtogif: computing colormap...
+pamtogif: 10 colors found
+D_201911151330-201911151405_SUOMI1_dBZ.pgm
+PPN deterministic dBZ 
+15.11.2019 13:30 -> 14:05 UTC
+pamtogif: computing colormap...
+pamtogif: 12 colors found
+U_201911151330-201911151405_SUOMI1_dBZ.pgm
+PPN unperturbed dBZ 
+15.11.2019 13:30 -> 14:05 UTC
+pamtogif: computing colormap...
+pamtogif: 13 colors found
+201911151405
+M_201911151330-201911151410_SUOMI1_dBZ.pgm
+PPN ensemble mean dBZ 
+15.11.2019 13:30 -> 14:10 UTC
+pamtogif: computing colormap...
+pamtogif: 10 colors found
+D_201911151330-201911151410_SUOMI1_dBZ.pgm
+PPN deterministic dBZ 
+15.11.2019 13:30 -> 14:10 UTC
+pamtogif: computing colormap...
+pamtogif: 11 colors found
+U_201911151330-201911151410_SUOMI1_dBZ.pgm
+PPN unperturbed dBZ 
+15.11.2019 13:30 -> 14:10 UTC
+pamtogif: computing colormap...
+pamtogif: 13 colors found
+201911151410
+M_201911151330-201911151415_SUOMI1_dBZ.pgm
+PPN ensemble mean dBZ 
+15.11.2019 13:30 -> 14:15 UTC
+pamtogif: computing colormap...
+pamtogif: 10 colors found
+D_201911151330-201911151415_SUOMI1_dBZ.pgm
+PPN deterministic dBZ 
+15.11.2019 13:30 -> 14:15 UTC
+pamtogif: computing colormap...
+pamtogif: 12 colors found
+U_201911151330-201911151415_SUOMI1_dBZ.pgm
+PPN unperturbed dBZ 
+15.11.2019 13:30 -> 14:15 UTC
+pamtogif: computing colormap...
+pamtogif: 13 colors found
+201911151415
+M_201911151330-201911151420_SUOMI1_dBZ.pgm
+PPN ensemble mean dBZ 
+15.11.2019 13:30 -> 14:20 UTC
+pamtogif: computing colormap...
+pamtogif: 10 colors found
+D_201911151330-201911151420_SUOMI1_dBZ.pgm
+PPN deterministic dBZ 
+15.11.2019 13:30 -> 14:20 UTC
+pamtogif: computing colormap...
+pamtogif: 12 colors found
+U_201911151330-201911151420_SUOMI1_dBZ.pgm
+PPN unperturbed dBZ 
+15.11.2019 13:30 -> 14:20 UTC
+pamtogif: computing colormap...
+pamtogif: 13 colors found
+201911151420
+M_201911151330-201911151425_SUOMI1_dBZ.pgm
+PPN ensemble mean dBZ 
+15.11.2019 13:30 -> 14:25 UTC
+pamtogif: computing colormap...
+pamtogif: 10 colors found
+D_201911151330-201911151425_SUOMI1_dBZ.pgm
+PPN deterministic dBZ 
+15.11.2019 13:30 -> 14:25 UTC
+pamtogif: computing colormap...
+pamtogif: 13 colors found
+U_201911151330-201911151425_SUOMI1_dBZ.pgm
+PPN unperturbed dBZ 
+15.11.2019 13:30 -> 14:25 UTC
+pamtogif: computing colormap...
+pamtogif: 13 colors found
+201911151425
+M_201911151330-201911151430_SUOMI1_dBZ.pgm
+PPN ensemble mean dBZ 
+15.11.2019 13:30 -> 14:30 UTC
+pamtogif: computing colormap...
+pamtogif: 11 colors found
+D_201911151330-201911151430_SUOMI1_dBZ.pgm
+PPN deterministic dBZ 
+15.11.2019 13:30 -> 14:30 UTC
+pamtogif: computing colormap...
+pamtogif: 13 colors found
+U_201911151330-201911151430_SUOMI1_dBZ.pgm
+PPN unperturbed dBZ 
+15.11.2019 13:30 -> 14:30 UTC
+pamtogif: computing colormap...
+pamtogif: 13 colors found
+201911151430
+M_201911151330-201911151435_SUOMI1_dBZ.pgm
+PPN ensemble mean dBZ 
+15.11.2019 13:30 -> 14:35 UTC
+pamtogif: computing colormap...
+pamtogif: 10 colors found
+D_201911151330-201911151435_SUOMI1_dBZ.pgm
+PPN deterministic dBZ 
+15.11.2019 13:30 -> 14:35 UTC
+pamtogif: computing colormap...
+pamtogif: 12 colors found
+U_201911151330-201911151435_SUOMI1_dBZ.pgm
+PPN unperturbed dBZ 
+15.11.2019 13:30 -> 14:35 UTC
+pamtogif: computing colormap...
+pamtogif: 12 colors found
+201911151435
+M_201911151330-201911151440_SUOMI1_dBZ.pgm
+PPN ensemble mean dBZ 
+15.11.2019 13:30 -> 14:40 UTC
+pamtogif: computing colormap...
+pamtogif: 10 colors found
+D_201911151330-201911151440_SUOMI1_dBZ.pgm
+PPN deterministic dBZ 
+15.11.2019 13:30 -> 14:40 UTC
+pamtogif: computing colormap...
+pamtogif: 12 colors found
+U_201911151330-201911151440_SUOMI1_dBZ.pgm
+PPN unperturbed dBZ 
+15.11.2019 13:30 -> 14:40 UTC
+pamtogif: computing colormap...
+pamtogif: 13 colors found
+201911151440
+M_201911151330-201911151445_SUOMI1_dBZ.pgm
+PPN ensemble mean dBZ 
+15.11.2019 13:30 -> 14:45 UTC
+pamtogif: computing colormap...
+pamtogif: 10 colors found
+D_201911151330-201911151445_SUOMI1_dBZ.pgm
+PPN deterministic dBZ 
+15.11.2019 13:30 -> 14:45 UTC
+pamtogif: computing colormap...
+pamtogif: 12 colors found
+U_201911151330-201911151445_SUOMI1_dBZ.pgm
+PPN unperturbed dBZ 
+15.11.2019 13:30 -> 14:45 UTC
+pamtogif: computing colormap...
+pamtogif: 13 colors found
+201911151445
+M_201911151330-201911151450_SUOMI1_dBZ.pgm
+PPN ensemble mean dBZ 
+15.11.2019 13:30 -> 14:50 UTC
+pamtogif: computing colormap...
+pamtogif: 10 colors found
+D_201911151330-201911151450_SUOMI1_dBZ.pgm
+PPN deterministic dBZ 
+15.11.2019 13:30 -> 14:50 UTC
+pamtogif: computing colormap...
+pamtogif: 12 colors found
+U_201911151330-201911151450_SUOMI1_dBZ.pgm
+PPN unperturbed dBZ 
+15.11.2019 13:30 -> 14:50 UTC
+pamtogif: computing colormap...
+pamtogif: 13 colors found
+201911151450
+M_201911151330-201911151455_SUOMI1_dBZ.pgm
+PPN ensemble mean dBZ 
+15.11.2019 13:30 -> 14:55 UTC
+pamtogif: computing colormap...
+pamtogif: 10 colors found
+D_201911151330-201911151455_SUOMI1_dBZ.pgm
+PPN deterministic dBZ 
+15.11.2019 13:30 -> 14:55 UTC
+pamtogif: computing colormap...
+pamtogif: 13 colors found
+U_201911151330-201911151455_SUOMI1_dBZ.pgm
+PPN unperturbed dBZ 
+15.11.2019 13:30 -> 14:55 UTC
+pamtogif: computing colormap...
+pamtogif: 13 colors found
+201911151455
+M_201911151330-201911151500_SUOMI1_dBZ.pgm
+PPN ensemble mean dBZ 
+15.11.2019 13:30 -> 15:00 UTC
+pamtogif: computing colormap...
+pamtogif: 10 colors found
+D_201911151330-201911151500_SUOMI1_dBZ.pgm
+PPN deterministic dBZ 
+15.11.2019 13:30 -> 15:00 UTC
+pamtogif: computing colormap...
+pamtogif: 13 colors found
+U_201911151330-201911151500_SUOMI1_dBZ.pgm
+PPN unperturbed dBZ 
+15.11.2019 13:30 -> 15:00 UTC
+pamtogif: computing colormap...
+pamtogif: 13 colors found
+201911151500
+[1] 35272
+[1]  + Done                          find /mnt/meru/data/prod/radman/ppn -name *_anim.gif -mmin +1100 -exec rm -f {} ;
+ls: No match.
+foreach: No match.
+PPN process for 201911151330 ended at
+pe 15.11.2019 15.36.31 +0200
+

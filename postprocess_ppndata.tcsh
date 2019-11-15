@@ -1,5 +1,5 @@
 #!/bin/tcsh
-set BIN = $HOME/src
+set BIN = $HOME/src/fmippn-vc/fmippn-run-and-distribution
 setenv SUOMI_ARGPATH $BIN/config
 setenv SUOMI_RAINCLASSES $SUOMI_ARGPATH/rainclasses.txt
 set DOLOOP = 0
@@ -9,8 +9,8 @@ set ORMINS = `echo $ORIGTIME | cut -c11-12`
 set WWWDIR = /mnt/meru/data/prod/radman/ppn
 set VERDIR = /mnt/meru/data/prod/radman/ppnverif
 
-#cd $BIN
-./run_interp_oper.tcsh $ORIGTIME >& interp.log
+cd $BIN
+../fmippn-member-interp/run_interp_oper.tcsh $ORIGTIME >& logs/interp.log
 
 #cd /var/tmp/ppn/images
 #rm *.p?m
