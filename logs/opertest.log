@@ -1163,3 +1163,31 @@ foreach: No match.
 PPN process for 201911151330 ended at
 pe 15.11.2019 15.36.31 +0200
 
+/home/ylhaisi/fmippn-run/fmippn-run-and-distribution
+PPN process for 201911151240 started at
+ma 18.11.2019 10.36.41 +0200
+~/fmippn-run/fmippn ~/fmippn-run/fmippn-run-and-distribution
+Pysteps configuration file found at: /home/ylhaisi/fmippn-run/fmippn/pystepsrc
+
+Computing the motion field with the Lucas-Kanade method.
+--- LK found 257 sparse vectors ---
+--- 73 sparse vectors left for interpolation ---
+Traceback (most recent call last):
+  File "/home/ylhaisi/fmippn-run/fmippn/run_ppn.py", line 43, in <module>
+    main()
+  File "/home/ylhaisi/fmippn-run/fmippn/run_ppn.py", line 39, in main
+    ppn.run(**args)
+  File "/home/ylhaisi/fmippn-run/fmippn/ppn.py", line 93, in run
+    motion_field = optflow(observations)
+  File "/home/ylhaisi/miniconda3/envs/fmippn/lib/python3.7/site-packages/pysteps/motion/lucaskanade.py", line 320, in dense_lucaskanade
+    k=k, epsilon=epsilon, nchunks=nchunks)
+  File "/home/ylhaisi/miniconda3/envs/fmippn/lib/python3.7/site-packages/pysteps/motion/lucaskanade.py", line 657, in _interpolate_sparse_vectors
+    d, inds = tree.query(subgrid, k=k)
+  File "ckdtree.pyx", line 818, in scipy.spatial.ckdtree.cKDTree.query
+  File "<__array_function__ internals>", line 2, in reshape
+KeyboardInterrupt
+ma 18.11.2019 10.36.47 +0200
+~/fmippn-run/fmippn-run-and-distribution
+PPN process for 201911151240 ended at
+ma 18.11.2019 10.36.47 +0200
+

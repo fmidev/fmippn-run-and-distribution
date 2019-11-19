@@ -6,3 +6,10 @@
 2019-11-15 14:35:42 (root) INFO: Generating nowcasts from 2019-11-14 11:20:00 to 2019-11-14 12:50:00
 2019-11-15 14:35:43 (root) INFO: Regenerating ensemble motion fields...
 2019-11-15 14:35:44 (root) INFO: Finished regeneration.
+2019-11-15 14:49:10 (root) INFO: Program starting.
+2019-11-15 14:49:10 (root) INFO: Generating nowcasts from 2019-11-15 12:40:00 to 2019-11-15 14:10:00
+2019-11-15 14:49:14 (root) INFO: Regenerating ensemble motion fields...
+2019-11-15 14:49:15 (root) INFO: Finished regeneration.
+2019-11-15 14:57:38 (root) INFO: Finished nowcasting. Time elapsed: 0:08:27.510118
+2019-11-15 14:58:03 (root) INFO: Finished writing output to a file.
+2019-11-15 14:58:03 (root) INFO: Run complete. Exiting.
